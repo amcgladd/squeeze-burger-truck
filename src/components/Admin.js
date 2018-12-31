@@ -59,9 +59,7 @@ class Admin extends React.Component {
     return(
       <div className="admin-container">
         <div className="add-and-edit">
-          <AddForm
-            onResetForm={this.handleResetForm}
-          />
+          <AddForm/>
           <EditForm
             onResetForm={this.handleResetForm}
             onInputChange={this.handleInputChange}
