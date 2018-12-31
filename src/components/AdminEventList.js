@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AdminEvent from './AdminEvent';
+import '../assets/styles/Admin.scss';
 
 function AdminEventList({ addresses, onChangingSelectedEditEvent }) {
   return(
-    <div>
+    <div className="boxes">
       {Object.keys(addresses).map(function(addressEventId) {
         var addressEvent = addresses[addressEventId];
         return <AdminEvent key={addressEventId}

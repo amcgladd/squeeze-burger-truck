@@ -12,6 +12,7 @@ import * as actions from './../actions';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import AddForm from './AddForm';
 import AdminLogIn from './AdminLogIn';
+import '../assets/styles/App.scss';
 
 
 class App extends Component {
@@ -35,7 +36,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <Header/>
         <Switch>
           <Route

@@ -50,9 +50,6 @@ class GoogleMap extends React.Component {
               url: mapMarker
             }}
           />
-
-
-
         </Map>
       </div>
     );
