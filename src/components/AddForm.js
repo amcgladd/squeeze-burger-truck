@@ -17,12 +17,7 @@ function AddForm(props) {
   function handleAddressSubmission(event) {
     const { dispatch } = props;
     event.preventDefault();
-    const momentDate = moment(_date.value).format('dddd, MMMM D, YYYY');
-    const formattedDate = momentDate.toUpperCase();
-    const formattedTimeOpen = moment(_timeOpen.value, 'HH:mm').format('h A');
-    const formattedTimeClose = moment(_timeClose.value, 'HH:mm').format('h A');
-    console.log(formattedDate);
-    dispatch(fetchAdminInput(_streetAddress.value, _city.value, _addressState.value, _zipcode.value, formattedDate, formattedTimeOpen, formattedTimeClose));
+    dispatch(fetchAdminInput(_streetAddress.value, _city.value, _addressState.value, _zipcode.value, _date.value, _timeOpen.value, _timeClose.value));
     _streetAddress.value = '';
     _city.value = '';
     _addressState.value = '';

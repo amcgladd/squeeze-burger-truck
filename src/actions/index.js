@@ -1,5 +1,5 @@
 import constants from './../constants';
-import { googleMapAPIKey } from './../constants/googleMapAPIKey';
+import googleMapAPIKey from './../constants/googleMapAPIKey';
 import Firebase from 'firebase';
 const { firebaseConfig } = constants;
 

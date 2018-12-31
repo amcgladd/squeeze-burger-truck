@@ -4,7 +4,7 @@ import mapMarker from '../assets/img/map_marker.png';
 import '../assets/styles/Maps.scss';
 import '../assets/styles/GoogleMap.scss';
 import schedule from '../assets/logos/SCHEDULE_orange.png';
-import { googleMapAPIKey } from './../constants/googleMapAPIKey'
+import googleMapAPIKey from './../constants/googleMapAPIKey'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 const googleMapsStyles = {
   width: '50vw',

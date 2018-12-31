@@ -1,8 +1,15 @@
 import React from 'react';
 import GoogleMap from './GoogleMap';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 function Event({ streetAddress, addressState, city, zipcode, date, timeOpen, timeClose, lat, lng}) {
+
+  const momentDate = moment(date).format('dddd, MMMM D, YYYY');
+  const formattedDate = momentDate.toUpperCase();
+  const formattedTimeOpen = moment(timeOpen, 'HH:mm').format('h A');
+  const formattedTimeClose = moment(timeClose, 'HH:mm').format('h A');
+
   return(
     <div className="box">
       <style>{`
@@ -35,12 +42,12 @@ function Event({ streetAddress, addressState, city, zipcode, date, timeOpen, tim
           color: #49505e;
         }
         .googleMapBox {
-          height: 100px;    
+          height: 100px;
         }
       `}</style>
       <div className="dateAndTime">
-        <p>{date}</p>
-        <p>{timeOpen} to {timeClose}</p>
+        <p>{formattedDate}</p>
+        <p>{formattedTimeOpen} to {formattedTimeClose}</p>
       </div>
       <div className="address">
         <p>{streetAddress}, {city}, {addressState} {zipcode}</p>
