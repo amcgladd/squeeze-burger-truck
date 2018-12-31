@@ -42,6 +42,7 @@ function EditForm(props) {
     const { dispatch } = props;
     event.preventDefault();
     dispatch(deleteSelectedAddress(props.selectedEditEvent));
+    props.onResetForm();
   };
 
   return(
