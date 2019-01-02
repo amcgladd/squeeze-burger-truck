@@ -6,7 +6,6 @@ a:hover {
 a {
   text-decoration: none;
   color: white;
-  cursor: e-resize;
 }
 .HeaderStyles {
   background: black;
@@ -25,13 +24,15 @@ a {
     list-style: none;
     display: flex;
     flex-direction: row;
+    &:hover {
+      cursor: pointer;
+    }
     li {
       padding-right: 2.5em;
       letter-spacing: .2em;
       &:hover {
         color: #DA6727;
         transition: 0.7s;
-        cursor: e-resize;
       }
     }
   }

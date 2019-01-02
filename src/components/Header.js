@@ -20,12 +20,11 @@ function Header(){
           <li className="nav-list">
             <Link to="/">home</Link>
           </li>
+          <li className="nav-list">schedule</li>
           <li className="nav-list">menu</li>
-          <li className="nav-list">locations</li>
           <li className="nav-list">story</li>
           <li>{getButton()}</li>
         </ul>
-        <div></div>
         <div>
           <button className="booking-button">
             <Link to="/booking">book catering</Link>

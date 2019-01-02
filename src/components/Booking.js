@@ -114,7 +114,7 @@ function Booking(){
         <textarea default="" name="details"></textarea>
         <br/>
         <input type="submit" default=""  className="button" id="myBtn"  value="SEND"/>
-        <input default="" onClick={formSubmit} className="clearButton"  value="CLEAR FORM"/>
+        <input default="" onClick={formSubmit} className="button clearButton"  value="CLEAR FORM"/>
       </form>
 
 
