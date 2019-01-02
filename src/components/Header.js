@@ -17,12 +17,12 @@ function Header(){
   return (
     <div className="HeaderStyles">
         <ul className="nav-list">
-          <li className="nav-list">
+          <a href="#home"><li className="nav-list">
             <Link to="/">home</Link>
-          </li>
-          <li className="nav-list">schedule</li>
-          <li className="nav-list">menu</li>
-          <li className="nav-list">story</li>
+          </li></a>
+          <a href="#schedule"><li className="nav-list">schedule</li></a>
+          <a href="#menu"><li className="nav-list">menu</li></a>
+          <a href="#story"><li className="nav-list">story</li></a>
           <li>{getButton()}</li>
         </ul>
         <div>

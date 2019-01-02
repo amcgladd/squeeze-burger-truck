@@ -2,37 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import '../assets/styles/Booking.scss';
+import * as emailjs from 'emailjs-com';
 
 function Booking(){
 
-  document.addEventListener("DOMContentLoaded", function(event) {
+  function runEmailJs() {
     let modal = document.getElementById('myModal');
-    let btn = document.getElementById("myBtn");
-    let span = document.getElementsByClassName("close")[0];
-
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
-
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-  });
+    modal.style.display = "block";
+    emailjs.sendForm('squeeze_gmail','contact_form', '#contact-form', 'user_acsLOCo7pJNkYkmF3z92c')
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+    }, (err) => {
+      console.log('FAILED...', err);
+    });
+  }
 
   function formSubmit(event){
     event.preventDefault();
     var form = document.getElementById("contact-form");
     form.reset();
+  }
+
+  function closeModal(){
+    let modal = document.getElementById('myModal');
+    modal.style.display = "none";
   }
 
   return (
@@ -113,14 +106,14 @@ function Booking(){
         <br/>
         <textarea default="" name="details"></textarea>
         <br/>
-        <input type="submit" default=""  className="button" id="myBtn"  value="SEND"/>
-        <input default="" onClick={formSubmit} className="button clearButton"  value="CLEAR FORM"/>
+        <input onClick={runEmailJs} className="button" id="myBtn" value="SEND"/>
+        <input onClick={formSubmit} className="button clearButton" value="CLEAR FORM"/>
       </form>
 
 
       <div id="myModal" className="modal">
         <div className="modal-content">
-          <p id="myCloseBtn" className="close">&times;</p>
+          <p onClick={closeModal} id="myCloseBtn" className="close">&times;</p>
           <p>Thanks for your event request!</p>
           <p>Someone will reach out to you shortly.</p>
         </div>

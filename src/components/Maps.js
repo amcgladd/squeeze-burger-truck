@@ -1,12 +1,13 @@
 import React from "react";
 import '../assets/styles/Maps.scss';
-import dummyMap from '../assets/img/dummymap.png';
 import schedule from '../assets/logos/SCHEDULE_orange.png';
+import ScrollableAnchor from 'react-scrollable-anchor'
 
 function Maps(){
 
   return (
-    <div className="map-container">
+    <ScrollableAnchor id={'schedule'}>
+    <div id="test" className="map-container">
       <div className="schedule-banner">
         <div className="schedule-border">
           <img src={schedule}/>
@@ -15,9 +16,10 @@ function Maps(){
       <div className="content-container">
         <div className="arrange-catering-button">
           <button className="map-catering-button">book catering</button>
-        </div> 
+        </div>
       </div>
     </div>
+    </ScrollableAnchor>
   );
 }
 

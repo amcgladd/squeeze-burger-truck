@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "emailjs-com": "^2.3.2",
     "firebase": "^3.0.0",
     "google-maps-react": "^2.0.2",
     "isomorphic-fetch": "^2.2.1",
