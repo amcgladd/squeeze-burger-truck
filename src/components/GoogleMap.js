@@ -21,6 +21,9 @@ class GoogleMap extends React.Component {
     return (
       <div id="map-styles">
         <style jsx>{`
+          #map-styles {
+            overflow: hidden!important;
+          }
           #map-styles div div div div div div div:nth-child(4) div:nth-child(2) {
             width: 32px!important;
             height: 43px!important;
@@ -33,6 +36,7 @@ class GoogleMap extends React.Component {
             left: 0!important;
             top: 0!important;
           }
+          
         `}</style>
         <Map
           google={this.props.google}
