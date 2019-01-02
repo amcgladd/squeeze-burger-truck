@@ -7,8 +7,6 @@ import '../assets/styles/EditForm.scss';
 
 function EditForm(props) {
 
-  console.log(props)
-
   let _streetAddress = null;
   let _city = null;
   let _addressState = null;
@@ -37,6 +35,7 @@ function EditForm(props) {
   function handleDeleteAddressSubmission(event) {
     const { dispatch } = props;
     event.preventDefault();
+    console.log(props.selectedEditEvent);
     dispatch(deleteSelectedAddress(props.selectedEditEvent));
     props.onResetForm();
   };

@@ -1,10 +1,10 @@
 import constants from './../constants';
 import googleMapAPIKey from './../constants/googleMapAPIKey';
-import Firebase from 'firebase';
+import * as firebase from 'firebase';
 const { firebaseConfig } = constants;
 
 /*eslint-disable */
-const fb = Firebase;
+const fb = firebase;
 fb.initializeApp(firebaseConfig);
 const addresses = fb.database().ref('addresses');
 /*eslint-enable */
@@ -48,7 +48,7 @@ export function editSelectedAddress(selectedEditEvent, streetAddress, city, addr
 
 export function deleteSelectedAddress(selectedEditEvent) {
   return function (dispatch) {
-    return addresses.child(selectedEditEvent).remove();
+    return addresses.child(selectedEditEvent).remove()
   };
 };
 
@@ -78,12 +78,19 @@ export function watchFirebaseEditAddressesRef() {
 export function watchFirebaseDeleteAddressesRef() {
   return function(dispatch) {
     addresses.on('child_removed', data => {
-      console.log("DELETE");
-      dispatch(deleteAddress(data.getKey()));
+      dispatch(firebaseSnapshot());
     });
-    console.log("DELETE");
   }
 };
+
+export function firebaseSnapshot() {
+  return function(dispatch) {
+    addresses.on('value', data => {
+      const addressList = data.val();
+      dispatch(deleteAddress(addressList));
+    });
+  }
+}
 
 function receiveAddress(addressFromFirebase) {
   return {
@@ -107,10 +114,10 @@ export function getCurrentUser  ()  {
 export function handleLogout ()  {
   return fb.auth().signOut().then(window.location = '/');
 }
-function deleteAddress(deleteAddressId) {
-  console.log(deleteAddressId);
+
+function deleteAddress(addressList) {
   return {
     type: 'DELETE_ADDRESS',
-    deleteAddressId: deleteAddressId
+    addressList: addressList
   }
 };
