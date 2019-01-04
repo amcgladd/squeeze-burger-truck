@@ -1,6 +1,6 @@
 import React from "react";
 import '../assets/styles/Hero.scss';
-import blackLogo from '../assets/logos/outlined-orange.png';
+import finalLogo from '../assets/logos/FINAL.png';
 
 
 function Maps(){
@@ -9,7 +9,7 @@ function Maps(){
     <div className="flex-container">
       <div className="slide1">
         <div className="hero-center">
-          <img className="black-logo" src={blackLogo}/>
+          <img className="black-logo" src={finalLogo}/>
         </div>
       </div>
     </div>
